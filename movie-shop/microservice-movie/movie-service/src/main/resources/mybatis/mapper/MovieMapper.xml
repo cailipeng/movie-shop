@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.clp.dao.MovieMapper">
+
+    <resultMap id="BaseResultMap" type="com.clp.entity.Movie">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="movie_name" property="movieName" jdbcType="VARCHAR"/>
+        <result column="movie_address" property="moiveAddress" jdbcType="VARCHAR"/>
+        <result column="price" property="price" jdbcType="DECIMAL"/>
+        <result column="released_date" property="releasedDate" jdbcType="TIMESTAMP"/>
+        <result column="remark" property="remark" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询电影信息列表-->
+    <select id="getMovieList" resultMap="BaseResultMap">
+        select * from  tb_movie
+    </select>
+
+
+</mapper>
